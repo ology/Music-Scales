@@ -80,26 +80,26 @@ Other abbreviations are shown in brackets.
   7 locrian / hypophrygian
   8 harmonic minor / hm
   9 melodic minor / mm
- 10 blues 
+ 10 blues
  11 pentatonic (pmajor)
- 12 chromatic 
- 13 diminished 
- 14 wholetone 
- 15 augmented 
- 16 hungarian minor 
- 17 3 semitone 
- 18 4 semitone 
+ 12 chromatic
+ 13 diminished
+ 14 wholetone
+ 15 augmented
+ 16 hungarian minor
+ 17 3 semitone
+ 18 4 semitone
  19 neapolitan minor (nmin)
  20 neapolitan major (nmaj)
- 21 todi 
- 22 marva 
- 23 persian 
- 24 oriental 
- 25 romanian 
- 26 pelog 
- 27 iwato 
- 28 hirajoshi 
- 29 egyptian 
+ 21 todi
+ 22 marva
+ 23 persian
+ 24 oriental
+ 25 romanian
+ 26 pelog
+ 27 iwato
+ 28 hirajoshi
+ 29 egyptian
  30 pentatonic minor (pminor)
 
 =head1 EXAMPLE
