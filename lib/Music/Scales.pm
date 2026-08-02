@@ -64,6 +64,22 @@ as get_scale_MIDI(), but returns an array of PDL-format notes.
 
 returns true if $scalename is a valid scale name used in this module.
 
+=head2 get_mode()
+
+TODO
+
+=head2 note_to_MIDI()
+
+TODO
+
+=head2 note_to_num
+
+TODO
+
+=head2 scale_to_PDL()
+
+TODO
+
 =head1 SCALES
 
 Scales can be passed either by name or number.
