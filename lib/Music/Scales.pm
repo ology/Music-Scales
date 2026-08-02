@@ -14,9 +14,6 @@ BEGIN {
 }
 
 
-=head1 NAME
-
-
 =head1 SYNOPSIS
 
     use Music::Scales;
