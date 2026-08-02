@@ -1,4 +1,7 @@
 package Music::Scales;
+
+# ABSTRACT: Generate musical scales
+
 use strict;
 use Text::Abbrev;
 
