@@ -10,7 +10,7 @@ BEGIN {
 	use vars qw ($VERSION @ISA @EXPORT);
 	$VERSION     = 0.07;
 	@ISA         = qw (Exporter);
-	@EXPORT      = qw (get_scale_notes get_scale_nums get_scale_offsets is_scale get_scale_PDL get_scale_MIDI);
+	@EXPORT      = qw (get_scale_notes get_scale_nums get_scale_offsets is_scale get_scale_PDL get_scale_MIDI %modes %abbrevs @scales);
 }
 
 
@@ -167,7 +167,7 @@ PDL::Audio::Scale, perl(1).
 
 =cut
 
-my %modes = qw(ionian 1 major 1 hypolydian 1 dorian 2 hypomyxolydian 2
+our %modes = qw(ionian 1 major 1 hypolydian 1 dorian 2 hypomyxolydian 2
 	phrygian 3 hypoaeolian 3 lydian 4 hypolocrian 4 mixolydian 5 hypoionian 5
 	aeolian 6 minor 6 m 6 hypodorian 6 locrian 7 hypophrygian 7
 	harmonicminor 8 hm 8 melodicminor 9 mm 9
@@ -178,12 +178,12 @@ my %modes = qw(ionian 1 major 1 hypolydian 1 dorian 2 hypomyxolydian 2
 	iwato 27 hirajoshi 28 egyptian 29 pminor 30 pentatonicminor 30
 );
 
-my %abbrevs = abbrev(keys %modes);
+our %abbrevs = abbrev(keys %modes);
 while (my ($k,$v) = each %abbrevs) {
 	$modes{$k} = $modes{$v};
 }
 
-my @scales=([0,2,4,5,7,9,11],	# Ionian(1)
+our @scales=([0,2,4,5,7,9,11],	# Ionian(1)
 			[0,2,3,5,7,9,10],	# Dorian (2)
 			[0,1,3,5,7,8,10],	# Phrygian (3)
 			[0,2,4,6,7,9,11],	# Lydian (4)
