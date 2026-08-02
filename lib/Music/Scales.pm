@@ -285,7 +285,7 @@ sub get_scale_notes {
 			my $m = $_ - $cu;
 			my $ns = shift(@nums);
 			push @nums,$ns;
-			my $n = shift(@notes); 
+			my $n = shift(@notes);
 			push @notes,$n;
 			while (abs($m) > 2 || (@scale < 7 && abs($m) >= $ns)) {	# step up/down notes, 'reducing' flats/sharps
 				$n = shift(@notes); push @notes,$n;
