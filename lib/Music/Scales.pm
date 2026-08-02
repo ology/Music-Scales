@@ -336,6 +336,6 @@ sub scale_to_PDL {
 	@result;
 }
 
-1; 
-__END__
+1;
 
+__END__
