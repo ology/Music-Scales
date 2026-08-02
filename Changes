@@ -1,5 +1,9 @@
 Revision history for Perl module Music::Scales
 
+{{$NEXT}}
+	- Cleaned up POD.
+	- Exported scale lists.
+
 0.07	Bugfixes :(
 
 0.06	Added get_scale_MIDI
