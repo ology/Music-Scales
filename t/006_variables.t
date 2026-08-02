@@ -1,6 +1,6 @@
 # -*- perl -*-
 
-# t/003_isscale.t - check mode names are ok
+# t/006_variables.t - check that variables are exported
 
 use Test::Simple tests => 3;
 use Music::Scales qw(%modes %abbrevs @scales);
