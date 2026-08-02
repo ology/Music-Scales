@@ -30,7 +30,7 @@ BEGIN {
 
 Scales - supply necessary notes / offsets for musical scales
 
-Given a keynote A-G(#/b) and a scale-name, will return the scale, 
+Given a keynote A-G(#/b) and a scale-name, will return the scale,
 either as an array of notenames or as a hash of semitone-offsets for each note.
 
 =head1 METHODS
