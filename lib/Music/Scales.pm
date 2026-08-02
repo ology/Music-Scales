@@ -1,7 +1,4 @@
 package Music::Scales;
-
-# ABSTRACT: Generate musical scales
-
 use strict;
 use Text::Abbrev;
 
@@ -13,6 +10,10 @@ BEGIN {
 	@EXPORT      = qw (get_scale_notes get_scale_nums get_scale_offsets is_scale get_scale_PDL get_scale_MIDI %modes %abbrevs @scales);
 }
 
+
+=head1 NAME
+
+ Scales - supply necessary notes / offsets for musical scales
 
 =head1 SYNOPSIS
 
@@ -28,10 +29,8 @@ BEGIN {
 
 =head1 DESCRIPTION
 
-Scales - supply necessary notes / offsets for musical scales
-
-Given a keynote A-G(#/b) and a scale-name, will return the scale,
-either as an array of notenames or as a hash of semitone-offsets for each note.
+ Given a keynote A-G(#/b) and a scale-name, will return the scale, 
+ either as an array of notenames or as a hash of semitone-offsets for each note.
 
 =head1 METHODS
 
@@ -44,7 +43,7 @@ Scaletypes and valid values for $scale are listed below.
 =head2 get_scale_notes($notename[,$scale,$descending,$keypref])
 
 returns an array of notenames, starting from the given keynote.
-Enharmonic equivalencies (whether to use F# or Gb, for instance) are calculated based on the keynote and the scale. Basically, it attempts to do the Right Thing if the scale is an 8-note one,
+Enharmonic equivalencies (whether to use F# or Gb, for instance) are calculated based on the keynote and the scale. Basically, it attempts to do the Right Thing if the scale is an 8-note one, 
 (the 7th in G harmonic minor being F# rather than Gb, although G minor is a 'flat' key), but for any other scales, (Chromatic, blues etc.) it picks equivalencies based upon the keynote.
 This can be overidden with $keypref, setting to be either '#' or 'b' for sharps and flats respectively. Cruftiness abounds here :)
 
@@ -80,7 +79,7 @@ TODO
 
 TODO
 
-=head1 SCALES
+=head1 SCALES 
 
 Scales can be passed either by name or number.
 The default scale is 'major' if none  / invalid is given.
@@ -96,26 +95,26 @@ Other abbreviations are shown in brackets.
   7 locrian / hypophrygian
   8 harmonic minor / hm
   9 melodic minor / mm
- 10 blues
+ 10 blues 
  11 pentatonic (pmajor)
- 12 chromatic
- 13 diminished
- 14 wholetone
- 15 augmented
- 16 hungarian minor
- 17 3 semitone
- 18 4 semitone
+ 12 chromatic 
+ 13 diminished 
+ 14 wholetone 
+ 15 augmented 
+ 16 hungarian minor 
+ 17 3 semitone 
+ 18 4 semitone 
  19 neapolitan minor (nmin)
  20 neapolitan major (nmaj)
- 21 todi
- 22 marva
- 23 persian
- 24 oriental
- 25 romanian
- 26 pelog
- 27 iwato
- 28 hirajoshi
- 29 egyptian
+ 21 todi 
+ 22 marva 
+ 23 persian 
+ 24 oriental 
+ 25 romanian 
+ 26 pelog 
+ 27 iwato 
+ 28 hirajoshi 
+ 29 egyptian 
  30 pentatonic minor (pminor)
 
 =head1 EXAMPLE
@@ -145,7 +144,7 @@ This will print every scale in every key, adjusting the enharmonic equivalents a
  Thanks to Steve Hay for pointing out my 'minor' mix-up and many suggestions.
  Thanks also to Gene Boggs for the 'is_scale' suggestion / code.
 
-=head1 BUGS
+=head1 BUGS 
  
  A few enharmonic problems still...
 
@@ -167,12 +166,12 @@ PDL::Audio::Scale, perl(1).
 
 =cut
 
-our %modes = qw(ionian 1 major 1 hypolydian 1 dorian 2 hypomyxolydian 2
+our %modes = qw(ionian 1 major 1 hypolydian 1 dorian 2 hypomyxolydian 2 
 	phrygian 3 hypoaeolian 3 lydian 4 hypolocrian 4 mixolydian 5 hypoionian 5
-	aeolian 6 minor 6 m 6 hypodorian 6 locrian 7 hypophrygian 7
+	aeolian 6 minor 6 m 6 hypodorian 6 locrian 7 hypophrygian 7 
 	harmonicminor 8 hm 8 melodicminor 9 mm 9
 	blues 10 pentatonic 11 pmaj 11 chromatic 12 diminished 13 wholetone 14
-	augmented 15 hungarianminor 16 3semitone 17 4semitone 18
+	augmented 15 hungarianminor 16 3semitone 17 4semitone 18 
 	neapolitanminor 19 nmin 19 neapolitanmajor 20 nmaj 20
 	todi 21 marva 22 persian 23 oriental 24 romanian 25 pelog 26
 	iwato 27 hirajoshi 28 egyptian 29 pminor 30 pentatonicminor 30
@@ -251,7 +250,7 @@ sub note_to_num {
 
 sub note_to_MIDI {
 	my ($note,$octave) = @_;
-	((note_to_num($note)+9) % 12) + (12 * ++$octave );
+	((note_to_num($note)+9) % 12) + (12 * ++$octave ); 
 }
 
 sub get_scale_MIDI {
@@ -301,7 +300,7 @@ sub get_scale_notes {
 			my $m = $_ - $cu;
 			my $ns = shift(@nums);
 			push @nums,$ns;
-			my $n = shift(@notes);
+			my $n = shift(@notes); 
 			push @notes,$n;
 			while (abs($m) > 2 || (@scale < 7 && abs($m) >= $ns)) {	# step up/down notes, 'reducing' flats/sharps
 				$n = shift(@notes); push @notes,$n;
@@ -352,6 +351,6 @@ sub scale_to_PDL {
 	@result;
 }
 
-1;
-
+1; 
 __END__
+
