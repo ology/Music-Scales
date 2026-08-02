@@ -151,12 +151,12 @@ PDL::Audio::Scale, perl(1).
 
 =cut
 
-my %modes = qw(ionian 1 major 1 hypolydian 1 dorian 2 hypomyxolydian 2 
+my %modes = qw(ionian 1 major 1 hypolydian 1 dorian 2 hypomyxolydian 2
 	phrygian 3 hypoaeolian 3 lydian 4 hypolocrian 4 mixolydian 5 hypoionian 5
-	aeolian 6 minor 6 m 6 hypodorian 6 locrian 7 hypophrygian 7 
+	aeolian 6 minor 6 m 6 hypodorian 6 locrian 7 hypophrygian 7
 	harmonicminor 8 hm 8 melodicminor 9 mm 9
 	blues 10 pentatonic 11 pmaj 11 chromatic 12 diminished 13 wholetone 14
-	augmented 15 hungarianminor 16 3semitone 17 4semitone 18 
+	augmented 15 hungarianminor 16 3semitone 17 4semitone 18
 	neapolitanminor 19 nmin 19 neapolitanmajor 20 nmaj 20
 	todi 21 marva 22 persian 23 oriental 24 romanian 25 pelog 26
 	iwato 27 hirajoshi 28 egyptian 29 pminor 30 pentatonicminor 30
