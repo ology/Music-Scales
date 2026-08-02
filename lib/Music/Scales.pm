@@ -64,7 +64,7 @@ as get_scale_MIDI(), but returns an array of PDL-format notes.
 
 returns true if $scalename is a valid scale name used in this module.
 
-=head1 SCALES 
+=head1 SCALES
 
 Scales can be passed either by name or number.
 The default scale is 'major' if none  / invalid is given.
