@@ -129,7 +129,7 @@ This will print every scale in every key, adjusting the enharmonic equivalents a
  Thanks to Steve Hay for pointing out my 'minor' mix-up and many suggestions.
  Thanks also to Gene Boggs for the 'is_scale' suggestion / code.
 
-=head1 BUGS 
+=head1 BUGS
  
  A few enharmonic problems still...
 
