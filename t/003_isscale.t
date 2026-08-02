@@ -1,5 +1,3 @@
-# -*- perl -*-
-
 # t/003_isscale.t - check mode names are ok
 
 use Test::Simple tests => 6;

@@ -1,5 +1,3 @@
-# -*- perl -*-
-
 # t/005_scaleMIDI.t - check get_scale_MIDI is ok
 
 use Test::Simple tests => 3;

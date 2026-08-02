@@ -1,5 +1,3 @@
-# -*- perl -*-
-
 # t/004_scalePDL.t - check scale_to_PDL is ok
 
 use Test::Simple tests => 4;

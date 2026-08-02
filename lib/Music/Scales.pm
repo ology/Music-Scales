@@ -235,7 +235,7 @@ sub note_to_num {
 
 sub note_to_MIDI {
 	my ($note,$octave) = @_;
-	((note_to_num($note)+9) % 12) + (12 * ++$octave ); 
+	((note_to_num($note)+9) % 12) + (12 * ++$octave );
 }
 
 sub get_scale_MIDI {

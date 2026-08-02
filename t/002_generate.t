@@ -1,5 +1,3 @@
-# -*- perl -*-
-
 # t/002_generate.t - check scales are ok
 
 use Test::Simple tests => 7;
