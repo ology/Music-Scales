@@ -1,6 +1,8 @@
 Revision history for Perl module Music::Scales
 
 {{$NEXT}}
+
+0.1 2026-08-12 12:08:32
 	- Use spaces instead of sporadic tabs.
 
 0.09 2026-08-12 11:58:06
