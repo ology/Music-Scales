@@ -8,7 +8,7 @@ use Text::Abbrev;
 BEGIN {
     use Exporter ();
     use vars qw ($VERSION @ISA @EXPORT);
-    $VERSION     = 0.10;
+    $VERSION     = 0.11;
     @ISA         = qw (Exporter);
     @EXPORT      = qw (get_scale_notes get_scale_nums get_scale_offsets is_scale get_scale_PDL get_scale_MIDI %modes %abbrevs @scales);
 }
@@ -24,6 +24,7 @@ BEGIN {
     print join(" ",@blues);                    # "0 3 5 6 7 10"
     my %min = get_scale_offsets ('G','mm',1);  # descending melodic minor
     print join " ", map {"$_=$min{$_} "} sort keys %min; # "A=0 B=-1 C=0 D=0 E=-1 F=0 G=0"
+    print is_scale('foo') ? 1 : 0;
 
 =head1 DESCRIPTION
 
