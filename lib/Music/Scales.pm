@@ -13,18 +13,18 @@ BEGIN {
 	@EXPORT      = qw (get_scale_notes get_scale_nums get_scale_offsets is_scale get_scale_PDL get_scale_MIDI %modes %abbrevs @scales);
 }
 
-
 =head1 SYNOPSIS
 
     use Music::Scales;
 
     my @maj = get_scale_notes('Eb');           # defaults to major
     print join(" ",@maj);                      # "Eb F G Ab Bb C D"
+	@maj = get_scale_MIDI('C', 4)              # 60, 62, 64, 65, 67, 69, 71
+	@maj = get_scale_PDL('Eb', 4)              # ef4, f4, g4, af4, bf4, c5, d5
     my @blues = get_scale_nums('bl');          # 'bl','blu','blue','blues'
     print join(" ",@blues);                    # "0 3 5 6 7 10"
     my %min = get_scale_offsets ('G','mm',1);  # descending melodic minor
-    print map {"$_=$min{$_} "} sort keys %min; # "A=0 B=-1 C=0 D=0 E=-1 F=0 G=0"
-
+    print join " ", map {"$_=$min{$_} "} sort keys %min; # "A=0 B=-1 C=0 D=0 E=-1 F=0 G=0"
 
 =head1 DESCRIPTION
 
@@ -67,22 +67,6 @@ as get_scale_MIDI(), but returns an array of PDL-format notes.
 =head2 is_scale($scalename)
 
 returns true if $scalename is a valid scale name used in this module.
-
-=head2 get_mode()
-
-TODO
-
-=head2 note_to_MIDI()
-
-TODO
-
-=head2 note_to_num
-
-TODO
-
-=head2 scale_to_PDL()
-
-TODO
 
 =head1 SCALES 
 
@@ -214,7 +198,7 @@ our @scales=([0,2,4,5,7,9,11],	# Ionian(1)
 
 sub get_scale_nums {
 	my ($mode,$descending) = @_;
-	$mode = get_mode($mode);
+	$mode = _get_mode($mode);
 	my @dists = @{$scales[$mode-1]};
 	if ($descending && $mode == 9) {
 		$dists[5]-- ;$dists[6]--;
@@ -232,34 +216,34 @@ sub get_scale_offsets {
 	%key_alts;
 }
 
-sub get_mode {
+sub _get_mode {
 	my $mode = shift() || 1;
 	$mode =~ s/[^a-zA-Z0-9]//g;
 	$mode = $modes{lc($mode)} unless $mode =~/^[0-9]+$/;
 	($mode && ($mode <= @scales)) ? $mode : 1;
 }
 
-sub note_to_num {
+sub _note_to_num {
 	my $note = shift();
 	my %note2num = ('A','0','A#','1','BB','1','B','2','C','3','C#','4','DB','4','D','5','D#','6','EB','6','E','7','F','8','F#','9','GB','9','G','10','G#','11','AB','11');
 	return $note if ($note =~/^[0-9]+$/);
 	(defined $note2num{uc($note)}) ? $note2num{uc($note)} : 0;
 }
 
-sub note_to_MIDI {
+sub _note_to_MIDI {
 	my ($note,$octave) = @_;
-	((note_to_num($note)+9) % 12) + (12 * ++$octave ); 
+	((_note_to_num($note)+9) % 12) + (12 * ++$octave ); 
 }
 
 sub get_scale_MIDI {
 	my ($note,$octave,$mode,$descending) = @_;
-	my $basenum = note_to_MIDI($note,$octave);
+	my $basenum = _note_to_MIDI($note,$octave);
 	return map {$basenum + $_} get_scale_nums($mode,$descending);
 }
 
 sub get_scale_PDL {
 	my ($note,$octave,$mode,$descending,$keypref) = @_;
-	scale_to_PDL($octave,get_scale_notes($note,$mode,$descending,$keypref));
+	_scale_to_PDL($octave,get_scale_notes($note,$mode,$descending,$keypref));
 }
 
 sub get_scale_notes {
@@ -269,8 +253,8 @@ sub get_scale_notes {
 
 	$keynote =~ s/^[a-z]/\u$&/;
 	$keypref='' unless defined $keypref;
-	my $keynum = note_to_num(uc($keynote));
-	$mode = get_mode($mode);
+	my $keynum = _note_to_num(uc($keynote));
+	$mode = _get_mode($mode);
 	my @dists = get_scale_nums($mode,$descending);
 	@dists = reverse @dists if $descending;
 	my @scale = map {($_+$keynum-$dists[0])%12} @dists;
@@ -326,19 +310,19 @@ sub is_scale {
     return exists $modes{lc $name} ? 1 : 0;
 }
 
-sub scale_to_PDL {
+sub _scale_to_PDL {
 	my ($octave,@scale)=@_;
 	my @result;
 	my $descending;
-	my $n1 = note_to_num($scale[0]);
-	my $n2 = note_to_num($scale[1]);
+	my $n1 = _note_to_num($scale[0]);
+	my $n2 = _note_to_num($scale[1]);
 	if ($n2 < $n1 && ($n1-$n2 < 5)) {
 		$descending = 1;
 		@scale = reverse @scale;
 	}
-	my $last = (note_to_num($scale[0]) + 9) % 12;
+	my $last = (_note_to_num($scale[0]) + 9) % 12;
 	foreach (@scale) {
-		my $n = (note_to_num($_) + 9) % 12;
+		my $n = (_note_to_num($_) + 9) % 12;
 		$octave++ if ($last > $n); #switched over octave at 'c'
 		s/\#/s/g;
 		s/b/f/g;
