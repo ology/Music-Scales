@@ -135,11 +135,6 @@ Improve enharmonic eqivalents.
 Microtones
 Generate ragas,gamelan etc.  - maybe needs an 'ethnic' subset of modules
 
-=head1 THANK YOU
-
-Thanks to Steve Hay for pointing out my 'minor' mix-up and many suggestions.
-Thanks also to Gene Boggs for the 'is_scale' suggestion / code.
-
 =head1 BUGS 
  
 A few enharmonic problems still...
@@ -149,6 +144,11 @@ All feedback most welcome.
 =head1 SEE ALSO
 
 PDL::Audio::Scale, perl(1).
+
+=head1 THANK YOU
+
+Thanks to Steve Hay for pointing out my 'minor' mix-up and many suggestions.
+Thanks also to Gene Boggs for the 'is_scale' suggestion / code.
 
 =cut
 
