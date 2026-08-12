@@ -16,7 +16,6 @@ BEGIN {
 =head1 SYNOPSIS
 
     use Music::Scales;
-
     my @maj = get_scale_notes('Eb');           # defaults to major
     print join(" ",@maj);                      # "Eb F G Ab Bb C D"
 	@maj = get_scale_MIDI('C', 4)              # 60, 62, 64, 65, 67, 69, 71
