@@ -49,8 +49,7 @@ returns an array of notenames, starting from the given keynote.
 
 Enharmonic equivalencies (whether to use F# or Gb, for instance) are calculated based on the keynote and the scale. 
 
-Basically, it attempts to do the Right Thing if the scale is an 8-note one, 
-(the 7th in G harmonic minor being F# rather than Gb, although G minor is a 'flat' key), but for any other scales, (Chromatic, blues etc.) it picks equivalencies based upon the keynote.
+Basically, it attempts to do the Right Thing if the scale is an 8-note one, (the 7th in G harmonic minor being F# rather than Gb, although G minor is a 'flat' key), but for any other scales, (Chromatic, blues etc.) it picks equivalencies based upon the keynote.
 
 This can be overidden with $keypref, setting to be either '#' or 'b' for sharps and flats respectively. Cruftiness abounds here :)
 
