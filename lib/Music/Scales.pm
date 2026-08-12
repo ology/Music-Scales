@@ -18,8 +18,8 @@ BEGIN {
     use Music::Scales;
     my @maj = get_scale_notes('Eb');           # defaults to major
     print join(" ",@maj);                      # "Eb F G Ab Bb C D"
-	@maj = get_scale_MIDI('C', 4)              # 60, 62, 64, 65, 67, 69, 71
-	@maj = get_scale_PDL('Eb', 4)              # ef4, f4, g4, af4, bf4, c5, d5
+	@maj = get_scale_MIDI('C', 4);             # 60, 62, 64, 65, 67, 69, 71
+	@maj = get_scale_PDL('Eb', 4);             # ef4, f4, g4, af4, bf4, c5, d5
     my @blues = get_scale_nums('bl');          # 'bl','blu','blue','blues'
     print join(" ",@blues);                    # "0 3 5 6 7 10"
     my %min = get_scale_offsets ('G','mm',1);  # descending melodic minor
