@@ -1,6 +1,7 @@
 Revision history for Perl module Music::Scales
 
 {{$NEXT}}
+	- Cleaned up POD again.
 
 0.08 2026-08-12 10:22:15
 	- Cleaned up POD.
