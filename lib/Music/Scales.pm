@@ -14,10 +14,6 @@ BEGIN {
 }
 
 
-=head1 NAME
-
- Scales - supply necessary notes / offsets for musical scales
-
 =head1 SYNOPSIS
 
     use Music::Scales;
@@ -32,8 +28,8 @@ BEGIN {
 
 =head1 DESCRIPTION
 
- Given a keynote A-G(#/b) and a scale-name, will return the scale, 
- either as an array of notenames or as a hash of semitone-offsets for each note.
+Given a keynote A-G(#/b) and a scale-name, will return the scale, 
+either as an array of notenames or as a hash of semitone-offsets for each note.
 
 =head1 METHODS
 
@@ -132,36 +128,23 @@ This will print every scale in every key, adjusting the enharmonic equivalents a
         }
     }
 
-
 =head1 TODO
  
- Add further range of scales from http://www.cs.ruu.nl/pub/MIDI/DOC/scales.zip
- Improve enharmonic eqivalents.
- Microtones
- Generate ragas,gamelan etc.  - maybe needs an 'ethnic' subset of modules
+Add further range of scales from http://www.cs.ruu.nl/pub/MIDI/DOC/scales.zip
+Improve enharmonic eqivalents.
+Microtones
+Generate ragas,gamelan etc.  - maybe needs an 'ethnic' subset of modules
 
-=head1 AUTHOR
+=head1 THANK YOU
 
- Ben Daglish (bdaglish@surfnet-ds.co.uk)
-
- Thanks to Steve Hay for pointing out my 'minor' mix-up and many suggestions.
- Thanks also to Gene Boggs for the 'is_scale' suggestion / code.
+Thanks to Steve Hay for pointing out my 'minor' mix-up and many suggestions.
+Thanks also to Gene Boggs for the 'is_scale' suggestion / code.
 
 =head1 BUGS 
  
- A few enharmonic problems still...
+A few enharmonic problems still...
 
- All feedback most welcome.
-
-=head1 COPYRIGHT
-
- Copyright (c) 2003, Ben Daglish. All Rights Reserved.
- This program is free software; you can redistribute
- it and/or modify it under the same terms as Perl itself.
-
- The full text of the license can be found in the
- LICENSE file included with this module.
-
+All feedback most welcome.
 
 =head1 SEE ALSO
 
