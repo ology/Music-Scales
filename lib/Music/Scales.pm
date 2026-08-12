@@ -36,14 +36,20 @@ either as an array of notenames or as a hash of semitone-offsets for each note.
 =head2 get_scale_nums($scale[,$descending])
 
 returns an array of semitone offsets for the requested scale, ascending/descending the given scale for one octave.
+
 The descending flag determines the direction of the scale, and also affects those scales (such as melodic minor) where the notes vary depending upon the direction.
+
 Scaletypes and valid values for $scale are listed below.
 
 =head2 get_scale_notes($notename[,$scale,$descending,$keypref])
 
 returns an array of notenames, starting from the given keynote.
-Enharmonic equivalencies (whether to use F# or Gb, for instance) are calculated based on the keynote and the scale. Basically, it attempts to do the Right Thing if the scale is an 8-note one, 
+
+Enharmonic equivalencies (whether to use F# or Gb, for instance) are calculated based on the keynote and the scale. 
+
+Basically, it attempts to do the Right Thing if the scale is an 8-note one, 
 (the 7th in G harmonic minor being F# rather than Gb, although G minor is a 'flat' key), but for any other scales, (Chromatic, blues etc.) it picks equivalencies based upon the keynote.
+
 This can be overidden with $keypref, setting to be either '#' or 'b' for sharps and flats respectively. Cruftiness abounds here :)
 
 =head2 get_scale_offsets($notename[,$scale,$descending,$keypref])
@@ -81,7 +87,9 @@ TODO
 =head1 SCALES 
 
 Scales can be passed either by name or number.
+
 The default scale is 'major' if none  / invalid is given.
+
 Text::Abbrev is used on scalenames, so they can be as abbreviated as unambiguously possible ('dor','io' etc.).
 Other abbreviations are shown in brackets.
 
@@ -131,8 +139,11 @@ This will print every scale in every key, adjusting the enharmonic equivalents a
 =head1 TODO
  
 Add further range of scales from http://www.cs.ruu.nl/pub/MIDI/DOC/scales.zip
+
 Improve enharmonic equivalents.
+
 Microtones
+
 Generate ragas,gamelan etc.  - maybe needs an 'ethnic' subset of modules
 
 =head1 BUGS 
@@ -148,6 +159,7 @@ PDL::Audio::Scale, perl(1).
 =head1 THANK YOU
 
 Thanks to Steve Hay for pointing out my 'minor' mix-up and many suggestions.
+
 Thanks also to Gene Boggs for the 'is_scale' suggestion / code.
 
 =cut
