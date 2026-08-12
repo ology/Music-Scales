@@ -131,7 +131,7 @@ This will print every scale in every key, adjusting the enharmonic equivalents a
 =head1 TODO
  
 Add further range of scales from http://www.cs.ruu.nl/pub/MIDI/DOC/scales.zip
-Improve enharmonic eqivalents.
+Improve enharmonic equivalents.
 Microtones
 Generate ragas,gamelan etc.  - maybe needs an 'ethnic' subset of modules
 
