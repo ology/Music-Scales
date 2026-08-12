@@ -30,6 +30,9 @@ BEGIN {
 Given a keynote A-G(#/b) and a scale-name, will return the scale, 
 either as an array of notenames or as a hash of semitone-offsets for each note.
 
+All functions are exported by default. Also the essential variables,
+C<%modes>, C<%abbrevs>, and C<@scales> are exported. Please see the source for their definitions.
+
 =head1 METHODS
 
 =head2 get_scale_nums($scale[,$descending])
