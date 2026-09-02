@@ -8,9 +8,9 @@ use Text::Abbrev;
 BEGIN {
     use Exporter ();
     use vars qw ($VERSION @ISA @EXPORT);
-    $VERSION     = 0.11;
+    $VERSION     = '0.12';
     @ISA         = qw (Exporter);
-    @EXPORT      = qw (get_scale_notes get_scale_nums get_scale_offsets is_scale get_scale_PDL get_scale_MIDI %modes %abbrevs @scales);
+    @EXPORT      = qw (get_scale_notes get_scale_nums get_scale_offsets is_scale get_scale_PDL get_scale_MIDI %modes %original_modes %abbrevs @scales);
 }
 
 =head1 SYNOPSIS
@@ -160,7 +160,7 @@ our %modes = qw(ionian 1 major 1 hypolydian 1 dorian 2 hypomyxolydian 2
     todi 21 marva 22 persian 23 oriental 24 romanian 25 pelog 26
     iwato 27 hirajoshi 28 egyptian 29 pminor 30 pentatonicminor 30
 );
-
+our %original_modes = %modes;
 our %abbrevs = abbrev(keys %modes);
 while (my ($k,$v) = each %abbrevs) {
     $modes{$k} = $modes{$v};
