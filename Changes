@@ -1,6 +1,8 @@
 Revision history for Perl module Music::Scales
 
 {{$NEXT}}
+
+0.13 2026-09-02 12:37:46
 	- Improve documentation.
 
 0.12 2026-09-02 12:27:52
