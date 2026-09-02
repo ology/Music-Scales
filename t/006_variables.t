@@ -2,8 +2,9 @@
 
 # t/006_variables.t - check that variables are exported
 
-use Test::More tests => 8;
-use Music::Scales qw(%original_modes %modes %abbrevs @scales);
+use Test::More tests => 9;
+
+use_ok 'Music::Scales', qw(%original_modes %modes %abbrevs @scales);
 
 my @got = keys %original_modes;
 ok(@got);
