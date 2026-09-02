@@ -15,15 +15,21 @@ BEGIN {
 
 =head1 SYNOPSIS
 
-    use Music::Scales;
+    use Music::Scales qw(get_scale_notes get_scale_MIDI get_scale_PDL get_scale_nums get_scale_offsets is_scale);
+
     my @maj = get_scale_notes('Eb');           # defaults to major
     print join(" ",@maj);                      # "Eb F G Ab Bb C D"
+    
     @maj = get_scale_MIDI('C', 4);             # 60, 62, 64, 65, 67, 69, 71
+    
     @maj = get_scale_PDL('Eb', 4);             # ef4, f4, g4, af4, bf4, c5, d5
+    
     my @blues = get_scale_nums('bl');          # 'bl','blu','blue','blues'
     print join(" ",@blues);                    # "0 3 5 6 7 10"
-    my %min = get_scale_offsets ('G','mm',1);  # descending melodic minor
+    
+    my %min = get_scale_offsets('G','mm',1);   # descending melodic minor
     print join " ", map {"$_=$min{$_} "} sort keys %min; # "A=0 B=-1 C=0 D=0 E=-1 F=0 G=0"
+    
     print is_scale('foo') ? 1 : 0;
 
 =head1 DESCRIPTION
@@ -32,7 +38,8 @@ Given a keynote A-G(#/b) and a scale-name, will return the scale,
 either as an array of notenames or as a hash of semitone-offsets for each note.
 
 All functions are exported by default. Also the essential variables,
-C<%modes>, C<%abbrevs>, and C<@scales> are exported. Please see the source for their definitions.
+C<%modes>, C<original_modes>, C<%abbrevs>, and C<@scales> are exported.
+Please see the source for their definitions.
 
 =head1 METHODS
 

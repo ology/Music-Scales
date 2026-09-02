@@ -1,9 +1,10 @@
 Revision history for Perl module Music::Scales
 
 {{$NEXT}}
+	- Improve documentation.
 
 0.12 2026-09-02 12:27:52
-	- Retain the original, non-abbreviated `%modes`.
+	- Retain the original, non-abbreviated `%modes` as `%original_modes`.
 	- Fix the variables test.
 
 0.11 2026-08-12 12:19:46
